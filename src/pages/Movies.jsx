@@ -25,6 +25,8 @@ const Movies = () => {
         setMovies(results);
       } catch (error) {
         console.log(error);
+      } finally {
+        setQuery(searchQuery);
       }
     })();
   }, [searchQuery]);
@@ -33,6 +35,7 @@ const Movies = () => {
     e.preventDefault();
     setSearchParams({ query });
   };
+
   return (
     <div>
       <h1>Movies</h1>
