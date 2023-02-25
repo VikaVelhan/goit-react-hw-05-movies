@@ -17,6 +17,7 @@ const Cast = () => {
         <li key={actor.id}>
           <img src={BASE_IMG_URL + actor.profile_path} alt="" width="150" />
           {actor.name}
+          <p>Character:{actor.character}</p>
         </li>
       ))}
     </div>
