@@ -2,6 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 
 const MoviesList = ({ movies }) => {
   const location = useLocation();
+
   return (
     <ul>
       {movies.map(movie => (

@@ -12,7 +12,7 @@ const Home = () => {
       try {
         const { results } = await fetchDayTrend();
 
-        setMovies(results); //results деструктуризація із resp.data
+        setMovies(results);
       } catch (error) {
         console.log(error);
       } finally {
