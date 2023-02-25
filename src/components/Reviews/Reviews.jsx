@@ -11,9 +11,12 @@ const Reviews = () => {
   }, [id]);
   return (
     <div>
-      <h1>Reviews</h1>
+      {reviews?.length === 0 && <p>We don't have any reviews for this movie</p>}
       {reviews.map(review => (
-        <li key={review.id}></li>
+        <li key={review.id}>
+          Author: {review.author}
+          <p>{review.content}</p>
+        </li>
       ))}
     </div>
   );

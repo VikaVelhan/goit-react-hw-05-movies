@@ -12,7 +12,6 @@ const Cast = () => {
   }, [id]);
   return (
     <div>
-      <h1>Cast</h1>
       {cast.map(actor => (
         <li key={actor.id}>
           <img src={BASE_IMG_URL + actor.profile_path} alt="" width="150" />
