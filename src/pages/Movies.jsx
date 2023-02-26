@@ -3,6 +3,8 @@ import { useState } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { fetchMovieByQuery } from '../services/apiService';
 import MoviesList from '../components/MoviesList/MoviesList';
+import Notiflix from 'notiflix';
+import css from './Movies.module.css';
 
 const Movies = () => {
   const [query, setQuery] = useState('');
@@ -23,6 +25,11 @@ const Movies = () => {
       try {
         const { results } = await fetchMovieByQuery(searchQuery);
         setMovies(results);
+        if (results.length === 0) {
+          Notiflix.Notify.failure('Please, enter a valid value.');
+
+          return;
+        }
       } catch (error) {
         console.log(error);
       } finally {
@@ -38,10 +45,16 @@ const Movies = () => {
 
   return (
     <div>
-      <h1>Movies</h1>
-      <form onSubmit={handleSubmit}>
-        <input type="text" value={query} onChange={handleChange} />
-        <button type="submit">Search</button>
+      <form onSubmit={handleSubmit} className={css.Form_search}>
+        <input
+          type="text"
+          value={query}
+          onChange={handleChange}
+          className={css.Input_search}
+        />
+        <button type="submit" className={css.Button_search}>
+          Search
+        </button>
       </form>
       <MoviesList movies={movies} />
     </div>

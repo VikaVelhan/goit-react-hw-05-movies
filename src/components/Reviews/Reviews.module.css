@@ -1,0 +1,16 @@
+.Reviews {
+  border-top: solid 3px rgb(80, 80, 80);
+  border-bottom: solid 3px rgb(80, 80, 80);
+}
+.Reviews_title {
+  font-weight: bold;
+  padding-top: 15px;
+}
+
+.Reviews_content {
+  font-weight: normal;
+  text-align: justify;
+  font-size: 15px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+}
